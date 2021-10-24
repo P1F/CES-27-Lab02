@@ -33,9 +33,9 @@ func mapFunc(input []byte) (result []mapreduce.KeyValue) {
 	result = make([]mapreduce.KeyValue, 0)
 
 	for _, word := range words {
-		//COMPLETAR ESSE CÓDIGO
-		//Basta colocar em result os itens <word,"1">
-		//Lembrando: word em minúsculo!
+		word = strings.ToLower(word)
+		kv := mapreduce.KeyValue{Key: word, Value: "1"}
+		result = append(result, kv)
 	}
 
 	//fmt.Printf("%v\n", result) //Para ajudar nos testes. Precisa da biblioteca fmt (acima comentada)
