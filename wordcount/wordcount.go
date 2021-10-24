@@ -48,7 +48,7 @@ func reduceFunc(input []mapreduce.KeyValue) (result []mapreduce.KeyValue) {
 	for _, item := range input {
 		_, ok := mapAux[item.Key]
 		if ok {
-			mapAux[item.Key] += 1
+			mapAux[item.Key]++
 		} else {
 			mapAux[item.Key] = 1
 		}
